@@ -1,0 +1,295 @@
+/*Creamos una paleta de colores */
+:root{
+    --blanco:#ffffff;
+    --negro: #020202;
+    --primario: #b907ff;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --amarillo: #ffdd00;
+}
+
+/*Establecemos el tamaño de la letra*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*Establecemos el tipo y tamaño de la letra utilizada en el body */
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+}
+
+.hero{
+    background-image: url(../html/hero.jpg); /* Agregamos la imagen de fondo  */
+    background-repeat: no-repeat; /* La imagen no se repita */
+    background-size: cover; 
+    height: 450px; /* Establece el alto */
+    position: relative;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0, 0, 0.7); /* establece la transferencia de la imagen */
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco); /* Establece el color de la letra */
+}
+
+/*Atributos para la clase Titulo*/
+.titulo {  
+    text-align: center;
+    font-size: 3.8rem;  
+    color: var(--negro);
+    font-weight: 700;   
+}
+
+/*Atributos para la clase Titulo Span*/
+.titulo span {
+    text-align: center;
+    font-size: 2rem;  
+    color:red;
+ }
+
+ .contenedor{
+    /*especifica la anchura del area de contenido de un elemento. */
+    width: 120rem;
+    /*establece el margen para los cuatro lados*/
+    margin: 0 auto;
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.servicios, 
+.navegacion-principal{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.boton{
+    background-color: rgb(53, 219, 219);
+    padding: 1rem 3rem;
+    margin-top:1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media(min-width:768px)
+{
+    .boton{
+        width: auto;
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.sombra{
+    -webkit-box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.75);
+     box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.75);
+     background-color: #dad5d5;
+     padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+ /*Establecemos el color del fondo de la clase Nav-Bg*/
+ .nav-bg{
+    background-color: var(--secundario);
+ }
+
+ /*Atributos para la clase Navegacion-Principal*/
+ .navegacion-principal{
+   display: flex; 
+   justify-content: space-between; /*Distribuir*/
+ }
+
+ /*Establecemos atributos solo para los Hipervinculos*/
+ .navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+ }
+
+ /*Atributos para la clase Contenedor*/
+ .contenedor{
+    width: 120rem;
+    margin: 0 auto;  
+ }
+
+ /*Creamos una nueva PseudoClase donde controlara los enlaces*/
+ .navegacion-principal a:hover {
+    background-color: var(--amarillo);
+    
+ }
+
+ /* Estilos para media Query */
+ @media (min-width: 480px){
+ body{
+    background-color: rgb(168, 222, 247); /* Establecemos el color de la pagina */
+ }
+}
+
+@media (min-width: 768px){
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media(min-width:768px){
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+    }
+}
+
+main{
+    text-align: center;
+  
+}
+
+svg{
+    padding: 1rem;
+    background-color:#a7f589 ;
+    border-radius: 10rem;
+}
+
+p{
+    text-align: justify;
+    padding: 5px;
+}
+
+.serv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.serv h3{
+    color:blue;
+    font-weight: normal;
+}
+
+.serv .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: #ffdd00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario{
+    background-color: #757575;
+    width: (60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffdd00;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4) {
+    grid-column: 1/3;
+}
+
+.campo{
+    margin-bottom: 1rem;
+
+}
+
+.campo label{
+    color:#ffffff;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 5rem;
+}
+
+.enviar .boton {
+    width: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+@media (min-widht: 768px) {
+    .w-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+    
+}
+
+.footer p{
+    text-align: center;
+ 
+}
